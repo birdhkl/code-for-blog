@@ -1,0 +1,7 @@
+{
+    "url": "./mka/plugins/so/hello_world.so",
+    "version": "1.0.0",
+    "name": "hello_world",
+    "desc": "test",
+    "activator": "Activator"
+}
