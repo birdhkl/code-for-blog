@@ -70,3 +70,11 @@ func BenchmarkMath(b *testing.B) {
 		}
 	}
 }
+
+func BenchmarkMathNotHardware(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		for _, value := range prepareFloat64Case() {
+			sqrt.GoSqrt(value)
+		}
+	}
+}

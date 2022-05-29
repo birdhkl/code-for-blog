@@ -155,3 +155,27 @@ func TestQuick(t *testing.T) {
 		}
 	}
 }
+
+func TestGo(t *testing.T) {
+	cases64 := []sqrtCase[float64]{
+		{
+			value: 121,
+		},
+		{
+			value: 2,
+		},
+		{
+			value: 18123,
+		},
+		{
+			value: 9912,
+		},
+	}
+
+	for _, c := range cases64 {
+		if !c.isRight(sqrt.GoSqrt(c.value)) {
+			t.Errorf("QuickSqrt64 %f, result %f", c.value, sqrt.QuickSqrt64(c.value))
+			return
+		}
+	}
+}

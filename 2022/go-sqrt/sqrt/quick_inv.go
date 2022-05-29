@@ -14,6 +14,7 @@ func QuickInvSqrt32(x float32) float32 {
 	return x
 }
 
+// QuickSqrt32 基于快速平方根倒数的开方算法
 func QuickSqrt32(x float32) float32 {
 	return 1.0 / QuickInvSqrt32(x)
 }
@@ -30,6 +31,7 @@ func QuickInvSqrt64(x float64) float64 {
 	return x
 }
 
+// QuickSqrt64 基于快速平方根倒数的开方算法
 func QuickSqrt64(x float64) float64 {
 	return 1.0 / QuickInvSqrt64(x)
 }
