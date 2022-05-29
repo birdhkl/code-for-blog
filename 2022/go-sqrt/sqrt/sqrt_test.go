@@ -1,6 +1,7 @@
 package sqrt_test
 
 import (
+	"fmt"
 	"go-sqrt/sqrt"
 	"math"
 	"testing"
@@ -12,7 +13,11 @@ type sqrtCase[T sqrt.SqrtValue] struct {
 
 func (scase *sqrtCase[T]) isRight(value T) bool {
 	wantResult := math.Sqrt(float64(scase.value))
-	return math.Abs(wantResult-float64(value)) <= sqrt.PRECISE
+	result := math.Abs(wantResult-float64(value)) <= sqrt.ResultPrecise
+	if !result {
+		fmt.Printf("not right wantResult:%f, got: %f, dleta: %f\n", wantResult, value, math.Abs(wantResult-float64(value)))
+	}
+	return result
 }
 
 func TestBinary(t *testing.T) {

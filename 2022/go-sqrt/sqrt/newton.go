@@ -14,7 +14,7 @@ func NewtonSqrt[T SqrtValue](value T) T {
 		return value
 	}
 	v := value
-	for math.Abs(float64(v*v-value)) > PRECISE {
+	for math.Abs(float64(v*v-value)) > ResultPrecise {
 		v = (v + value/v) / 2.
 	}
 	return v
