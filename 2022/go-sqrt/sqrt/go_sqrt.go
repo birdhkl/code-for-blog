@@ -8,6 +8,7 @@ const (
 	bias  = 1023
 )
 
+// GoSqrt 源码来自于go
 func GoSqrt(x float64) float64 {
 	// special cases
 	switch {
